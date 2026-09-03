@@ -1,0 +1,16 @@
+import java.util.Scanner{
+    public class Main{
+        public static void main(String[]args){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter the number to perform palindrome:");
+            String str = sc.nextline();
+            String pal = new StringBuilder(str).reversed().tostring();
+            if(str.equals.IgnoreCase(pal)){
+                System.out.println("the given string is palindrome");
+            }
+            else{
+                System.out.println("the given string is not a palindrome");
+            }
+            }
+        }
+    }
