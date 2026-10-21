@@ -1,0 +1,56 @@
+import java.util.*;
+class Solution {
+    public int minOperations(String s) {
+        int len = s.length();
+        boolean sort = true;
+        for(int i=1;i<len;i++)
+        {
+            if(s.charAt(i)<s.charAt(i-1))
+            {
+                sort = false;
+                break;
+
+            }
+        }
+        if(sort)
+        {
+            return 0;
+        }
+        char min='z';
+        char max='a';
+        for(int i=0;i<len;i++)
+        {
+            if(s.charAt(i)<min)
+            {
+                min=s.charAt(i);
+            }
+            if(s.charAt(i)>max)
+            {
+                max=s.charAt(i);
+            }
+        }
+        if(s.charAt(0)==min||s.charAt(len-1)==max)
+        {
+            return 1;
+        }
+        for(int i=0;i<len-1;i++)
+        {
+            if(s.charAt(i)==min)
+            {
+                return 2;
+            }
+        }
+        for(int i=1;i<len;i++)
+        {
+            if(s.charAt(i)==max)
+            {
+                return 2;
+            }
+        }
+        if(len==2)
+        {
+            return -1;
+        }
+        return 3;
+    }
+}
